@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>空置房费用在线填报工具 · 产品介绍与操作简介</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    color: #1f2933; background: #f5f6f8;
+    font-size: 12.5px; line-height: 1.55;
+  }
+  .page {
+    width: 210mm; min-height: 297mm; margin: 0 auto; padding: 12mm 14mm;
+    background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.08);
+  }
+  .head {
+    border-bottom: 3px solid #2b6cb0; padding-bottom: 8px; margin-bottom: 10px;
+    display: flex; justify-content: space-between; align-items: flex-end;
+  }
+  .head h1 { margin: 0; font-size: 21px; color: #1f4f80; }
+  .head .sub { font-size: 12px; color: #6b7280; margin-top: 3px; }
+  .head .tag { font-size: 11px; color: #2b6cb0; border: 1px solid #2b6cb0; border-radius: 999px; padding: 3px 10px; white-space: nowrap; }
+
+  .lead { background: #eef4fb; border-radius: 8px; padding: 9px 12px; font-size: 12.5px; margin-bottom: 12px; }
+  .lead b { color: #1f4f80; }
+
+  .section-title { font-size: 14px; font-weight: 700; color: #1f4f80; margin: 14px 0 7px; display: flex; align-items: center; gap: 6px; }
+  .section-title::before { content: ""; width: 4px; height: 14px; background: #2b6cb0; border-radius: 2px; display: inline-block; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 12px; }
+  .card h3 { margin: 0 0 6px; font-size: 13px; color: #2b6cb0; }
+  ol.steps { margin: 0; padding-left: 18px; }
+  ol.steps li { margin-bottom: 5px; }
+  ol.steps li b { color: #1f2933; }
+
+  .value { columns: 2; column-gap: 16px; }
+  .value p { margin: 0 0 6px; break-inside: avoid; padding-left: 16px; position: relative; }
+  .value p::before { content: "✓"; position: absolute; left: 0; color: #2f9e44; font-weight: 700; }
+
+  .note { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 9px 12px; font-size: 12px; margin-top: 12px; }
+  .note b { color: #b45309; }
+
+  .footer { margin-top: 12px; font-size: 11px; color: #9aa3af; text-align: center; border-top: 1px dashed #e5e7eb; padding-top: 8px; }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; width: auto; min-height: auto; padding: 8mm 10mm; }
+    @page { size: A4; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="head">
+    <div>
+      <h1>空置房费用在线填报工具</h1>
+      <div class="sub">产品介绍与操作简介 · 投资公司 · 2026 年度</div>
+    </div>
+    <div class="tag">微信内打开 · 免登录</div>
+  </div>
+
+  <div class="lead">
+    <b>一句话：</b>把原来线下收的空置房费用表，搬到了微信里。手机点开链接就能填，系统自动汇总、自动加锁，月底对账不用再人工搬表。覆盖 6 个项目（湿地公园 TOD 一/三期、南部新城 TOD、七星湾 TOD 一/二期、海沧中心 TOD）。
+  </div>
+
+  <div class="section-title">核心功能价值</div>
+  <div class="value">
+    <p><b>微信即用</b>：链接/二维码发群里，点开就能填，不用装 App、不用注册。</p>
+    <p><b>省事</b>：1–9 月实际数据已锁定只读，10–12 月在线填报，灰色数字是预估参考，填了就覆盖。</p>
+    <p><b>自动汇总</b>：各项目费用、合计由系统算出并锁定不可改，还能自己挑月份区间（X月–Y月）看小计。</p>
+    <p><b>不怕改</b>：可多次提交，系统自动取最新一版；填错随时再交。</p>
+    <p><b>管理留档</b>：管理员可看全区汇总、填报进度，一键导出 Excel / CSV。</p>
+    <p><b>口径一致</b>：空置率沿用源表口径（仅住宅未售，9月基准），不另起炉灶。</p>
+  </div>
+
+  <div class="section-title">怎么用</div>
+  <div class="grid2">
+    <div class="card">
+      <h3>填报人（各项目负责同事）</h3>
+      <ol class="steps">
+        <li>打开链接/扫码，进入填报页。</li>
+        <li>填<b>姓名</b>（必填），选自己负责的项目。</li>
+        <li>把 10–12 月那几栏的<b>实际费用</b>填上——灰字是预估参考，直接改掉；<b>不填就先按预估算</b>。</li>
+        <li>点「保存草稿」可暂存本机；点「提交」即上报。</li>
+        <li>想改随时再提交，系统留最新版；点「我的提交记录」可查自己历史。</li>
+      </ol>
+      <div style="font-size:11px;color:#6b7280;margin-top:4px">提示：物业费 / 公维金有"下月不得高于上月"的提醒，超标会弹窗，确认无误仍可提交（也可切严格模式直接拦）。</div>
+    </div>
+    <div class="card">
+      <h3>管理员（财务 / 统筹）</h3>
+      <ol class="steps">
+        <li>打开管理端链接，输入密钥进入。</li>
+        <li>选好月份区间，看各项目「实际口径」与「预估参考」汇总。</li>
+        <li>点「导出 CSV」或「导出 XLS」留档、对账。</li>
+        <li>看「填报进度」掌握谁还没填，必要时提醒。</li>
+        <li>数据需重置时点「清空」（谨慎，不可恢复）。</li>
+      </ol>
+      <div style="font-size:11px;color:#6b7280;margin-top:4px">汇总口径：1–9 月取实际，10–12 月取填报值（没填的按预估占位）。</div>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>注意事项：</b>
+    ① 一个项目可由指定填报人一次性填报 10–12 月，支持多次提交取最新；
+    ② 公维金"南部新城"源表为 0（无行），系统已自动兼容；
+    ③ 公摊水电保留"25年"历史参照列与 9 月预估标记，仅作参考、不参与填报；
+    ④ 管理端密钥请在生产环境替换默认口令，链接注意勿外泄。
+  </div>
+
+  <div class="footer">本简介对应工具版本：空置房费用在线填报工具（投资公司）· 本地运行 / 可发布为微信内 H5</div>
+</div>
+</body>
+</html>

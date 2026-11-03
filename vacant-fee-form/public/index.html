@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>2026空置房费用填报（投资公司）</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="topbar">
+  <h1>2026年度空置房费用填报</h1>
+  <div class="sub">投资公司 · 1–9月为已填实际，10–12月在线填报（预估值灰显，输入即覆盖）</div>
+</div>
+
+<div class="app">
+  <!-- 身份 -->
+  <div class="card">
+    <h2>身份标识 <span class="tag">极简，仅用于区分填写人</span></h2>
+    <label class="field">
+      <span class="lbl">填写人姓名<span class="req">*</span></span>
+      <input class="txt" id="filler" placeholder="请输入您的姓名" />
+    </label>
+    <label class="field">
+      <span class="lbl">备注（选填）</span>
+      <input class="txt" id="note" placeholder="如：本期数据来源说明" />
+    </label>
+  </div>
+
+  <!-- 项目选择 -->
+  <div class="card">
+    <h2>选择项目</h2>
+    <label class="field">
+      <span class="lbl">项目（每个项目单独填报）</span>
+      <select class="txt" id="projectSel"></select>
+    </label>
+    <div class="hint" id="projHint"></div>
+  </div>
+
+  <!-- 明细填报 -->
+  <div class="card" id="detailCard">
+    <h2>明细填报 <span class="tag">灰底为预估占位，输入实际值后变白底并覆盖</span></h2>
+    <div class="legend">
+      <span><i style="background:#f3f4f6;border:1px dashed #b6bcc6"></i>预估值（不计入实际统计）</span>
+      <span><i style="background:#f1f5f9"></i>1–9月实际（锁定）</span>
+      <span><i style="background:#fff;border:1px solid #2b6cb0"></i>已填实际</span>
+    </div>
+    <div id="feeTables"></div>
+  </div>
+
+  <!-- 汇总表（锁定） -->
+  <div class="card">
+    <h2>汇总表 <span class="tag">自动计算 · 锁定不可改</span></h2>
+    <div class="toggle-row">
+      <input type="checkbox" id="showEst" />
+      <label for="showEst">显示“预估参考”（未填报的10–12月用预估值占位；不勾选则为纯实际口径）</label>
+    </div>
+    <div class="toggle-row range-row">
+      <span class="lbl">汇总月份区间：</span>
+      <select class="txt sm" id="rangeFrom"></select>
+      <span class="sep">至</span>
+      <select class="txt sm" id="rangeTo"></select>
+      <span class="hint-inline">默认全年 1–12 月</span>
+    </div>
+    <div class="tablewrap">
+      <table class="summary" id="summaryTable"></table>
+    </div>
+    <div class="hint" id="summaryHint"></div>
+  </div>
+
+  <div class="card">
+    <h2>辅助</h2>
+    <div class="toolbar">
+      <button class="btn btn-ghost" id="btnHelp" style="flex:0 0 auto;padding:9px 14px">填报说明 / 口径</button>
+      <button class="btn btn-ghost" id="btnMy" style="flex:0 0 auto;padding:9px 14px">我的提交记录</button>
+    </div>
+    <div class="hint">填报说明中已就“空置率口径、填写范围/频次、字段结构、校验强度、部署方式”给出默认决策，可随时查看。</div>
+  </div>
+
+  <div class="admin-entry">
+    <a href="admin.html">管理端：查看 / 汇总 / 导出 →</a>
+  </div>
+</div>
+
+<div class="btnbar">
+  <button class="btn btn-ghost" id="btnDraft">保存草稿</button>
+  <button class="btn btn-primary" id="btnSubmit">提交</button>
+</div>
+
+<div class="toast" id="toast"></div>
+<div class="mask" id="mask">
+  <div class="modal" id="modal"></div>
+</div>
+
+<script src="common.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

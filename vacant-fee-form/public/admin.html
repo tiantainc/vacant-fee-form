@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>管理端 · 空置房费用汇总导出</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="topbar">
+  <h1>管理端 · 空置房费用</h1>
+  <div class="sub">查看提交 · 区间汇总 · 导出（需管理员密钥）</div>
+</div>
+<div class="app">
+  <div class="card">
+    <h2>管理员密钥</h2>
+    <label class="field">
+      <span class="lbl">密钥（与启动服务的 ADMIN_KEY 一致）</span>
+      <input class="txt" id="key" placeholder="请输入密钥" />
+    </label>
+    <div class="hint">默认密钥为 <code>admin123</code>，生产环境请通过环境变量 <code>ADMIN_KEY</code> 修改。</div>
+  </div>
+
+  <div class="card">
+    <h2>区间汇总 <span class="tag">区分“实际”与“预估参考”</span></h2>
+    <div class="toolbar">
+      <span>从</span>
+      <select id="fromM" class="txt"></select>
+      <span>月 至</span>
+      <select id="toM" class="txt"></select>
+      <span>月</span>
+      <button class="btn btn-ghost" id="btnSummary" style="flex:0 0 auto;padding:8px 14px">汇总</button>
+    </div>
+    <div class="hint">说明：实际口径 = 1–9月实际 + 已实际填报的10–12月；未填报的10–12月不计入实际，其预估值仅在“预估参考”列展示。</div>
+    <div class="tablewrap" style="margin-top:10px">
+      <table class="summary" id="adminSummary"></table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>导出 / 数据维护</h2>
+    <div class="toolbar">
+      <button class="btn btn-ghost" id="btnCsv" style="flex:0 0 auto;padding:8px 14px">导出 CSV</button>
+      <button class="btn btn-ghost" id="btnXls" style="flex:0 0 auto;padding:8px 14px">导出 Excel(.xls)</button>
+      <button class="btn btn-ghost" id="btnClear" style="flex:0 0 auto;padding:8px 14px;color:#e03131">清空全部提交</button>
+      <span class="hint" id="expHint">导出当前区间的全部提交明细 + 汇总表</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>填报进度 <span class="tag">各项目 10–12 月实际填报覆盖率</span></h2>
+    <div class="tablewrap">
+      <table class="summary" id="progTable"></table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>提交记录 <span class="tag" id="subCount"></span></h2>
+    <div class="tablewrap">
+      <table class="summary" id="subTable"></table>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:18px">
+    <a class="linkbtn" href="index.html">← 返回填报页</a>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<div class="mask" id="mask"><div class="modal" id="modal"></div></div>
+
+<script src="common.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
